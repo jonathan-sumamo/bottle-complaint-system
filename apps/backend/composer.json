@@ -1,0 +1,7 @@
+{
+  "name": "bottle-complaint-backend",
+  "require": {
+    "php": "^8.2|^8.3",
+    "laravel/framework": "^11.0"
+  }
+}
