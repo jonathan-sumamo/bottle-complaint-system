@@ -1,7 +1,35 @@
 {
-  "name": "bottle-complaint-backend",
-  "require": {
-    "php": "^8.2|^8.3",
-    "laravel/framework": "^11.0"
-  }
+    "name": "jonathan/bottle-complaint-backend",
+    "description": "Bottle Complaint Management System Backend",
+    "type": "project",
+    "require": {
+        "php": "^8.2",
+        "laravel/framework": "^11.0",
+        "laravel/sanctum": "^3.2",
+        "spatie/laravel-permission": "^6.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.14",
+        "laravel/sail": "^1.30",
+        "nunomaduro/collision": "^7.10",
+        "phpunit/phpunit": "^10.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        },
+        "files": []
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover --ansi"
+        ],
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "@php artisan key:generate --ansi"
+        ]
+    }
 }
